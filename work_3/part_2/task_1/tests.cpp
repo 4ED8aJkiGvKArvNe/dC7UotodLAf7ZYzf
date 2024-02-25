@@ -4,7 +4,7 @@
 // what to test
 #include "task.cpp"
 
-TEST(TestTask1, TestPositiveNumbersInRange)
+TEST(TestEvenNumbers, TestPositiveNumbersInRange)
 {
   int from = 1;
   int to = 11;
@@ -15,7 +15,7 @@ TEST(TestTask1, TestPositiveNumbersInRange)
   EXPECT_EQ(result, expected);
 }
 
-TEST(TestTask1, TestEqualEvenPositiveNumbers)
+TEST(TestEvenNumbers, TestEqualEvenPositiveNumbers)
 {
   int from = 24;
   int to = 24;
@@ -26,7 +26,7 @@ TEST(TestTask1, TestEqualEvenPositiveNumbers)
   EXPECT_EQ(result, expected);
 }
 
-TEST(TestTask1, TestEqualOddPositiveNumbers)
+TEST(TestEvenNumbers, TestEqualOddPositiveNumbers)
 {
   int from = 17;
   int to = 17;
@@ -37,7 +37,7 @@ TEST(TestTask1, TestEqualOddPositiveNumbers)
   EXPECT_EQ(result, expected);
 }
 
-TEST(TestTask1, TestNegativeNumbersInRange)
+TEST(TestEvenNumbers, TestNegativeNumbersInRange)
 {
   int from = -17;
   int to = -12;
@@ -48,7 +48,7 @@ TEST(TestTask1, TestNegativeNumbersInRange)
   EXPECT_EQ(result, expected);
 }
 
-TEST(TestTask1, TestRangeFromNegativeToPositive)
+TEST(TestEvenNumbers, TestRangeFromNegativeToPositive)
 {
   int from = -5;
   int to = 5;
@@ -59,7 +59,7 @@ TEST(TestTask1, TestRangeFromNegativeToPositive)
   EXPECT_EQ(result, expected);
 }
 
-TEST(TestTask1, TestSwappedRangePoints)
+TEST(TestEvenNumbers, TestSwappedRangePoints)
 {
   int from = 8;
   int to = 1;
@@ -67,5 +67,39 @@ TEST(TestTask1, TestSwappedRangePoints)
   std::vector<int> result = get_even_numbers(from, to);
 
   std::vector<int> expected = {2, 4, 6, 8};
+  EXPECT_EQ(result, expected);
+}
+
+TEST(TestEveryThirdNumber, TestSmallRange)
+{
+  int from = 1;
+  int to = 2;
+
+  std::vector<int> result = get_every_third_number(from, to);
+
+  std::vector<int> expected = {};
+  EXPECT_EQ(result, expected);
+}
+
+
+TEST(TestEveryThirdNumber, Test3NumbersInRange)
+{
+  int from = 1;
+  int to = 3;
+
+  std::vector<int> result = get_every_third_number(from, to);
+
+  std::vector<int> expected = {3};
+  EXPECT_EQ(result, expected);
+}
+
+TEST(TESTEveryTrirdNumber, TestRange)
+{
+  int from = 1;
+  int to = 10;
+
+  std::vector<int> result = get_every_third_number(from, to);
+
+  std::vector<int> expected = {3, 6, 9};
   EXPECT_EQ(result, expected);
 }
